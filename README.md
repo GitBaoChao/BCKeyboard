@@ -17,5 +17,7 @@ bc.backgroundColor = [UIColor clearColor];
 [self.view addSubview:bc];
 
 ## 密码键盘效果图
-![](https://github.com/BaoChao/raw/master/-keyboard.gif)
+
+
+![](https://github.com/baochao/BCKeyBoard/raw/master/readmeImage/keyboard.gif)
 
