@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5D7881DF-D4AE-4BF3-978F-BFDAEBFA685C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BCDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E75E1AD18C8D7FACEF48658F047758C34820C77A</key>
+		<string>https://github.com/GitBaoChao/BCKeyboard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BCDemo/BCDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E75E1AD18C8D7FACEF48658F047758C34820C77A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/GitBaoChao/BCKeyboard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E75E1AD18C8D7FACEF48658F047758C34820C77A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E75E1AD18C8D7FACEF48658F047758C34820C77A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BCKeyboard</string>
+		</dict>
+	</array>
+</dict>
+</plist>
