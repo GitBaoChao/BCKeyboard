@@ -17,4 +17,4 @@ bc.backgroundColor = [UIColor clearColor];
 [self.view addSubview:bc];
 
 ###GitHub仓库中的图片
-![](https://github.com/BaoChao/BCKeyBoard/raw/master/BCKeyBoard/keyboard.gif)
+![](https://github.com/BaoChao/BCKeyBoard/raw/master/keyboard.gif)
