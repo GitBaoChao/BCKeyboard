@@ -14,7 +14,7 @@
 
 @implementation BCTextView
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     
     self = [super initWithFrame:frame];
@@ -25,6 +25,7 @@
                                                    object:nil];
         
         self.autoresizesSubviews = NO;
+        //默认字和颜色
         self.placeholder = @"";
         self.placeholderColor = [UIColor lightGrayColor];
         

@@ -8,20 +8,27 @@
 
 #import "BCKeyBoard.h"
 #import "BCTextView.h"
-#import "Const.h"
+
 #import "DXFaceView.h"
 #import "BCMoreView.h"
 
-@interface BCKeyBoard () <UITextViewDelegate,DXFaceDelegate,BCMoreViewDelegate>
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+
+#define kBCTextViewHeight 36 /**< 底部textView的高度 */
+#define kHorizontalPadding 8 /**< 横向间隔 */
+#define kVerticalPadding 5 /**< 纵向间隔 */
+
+@interface BCKeyBoard () <UITextViewDelegate,DXFaceDelegate,BCMoreViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic,strong)UIImageView *backgroundImageView;
 @property (nonatomic,strong)UIButton *faceBtn;
 @property (nonatomic,strong)UIButton *moreBtn;
 @property (nonatomic,strong)BCTextView  *textView;
 @property (nonatomic,strong)UIView *faceView;
-@property (nonatomic,assign)BOOL isTop;
 @property (nonatomic,strong)UIView *moreView;
 @property (nonatomic,assign)CGFloat lastHeight;
-//拓展的view
 @property (nonatomic,strong)UIView *activeView;
 @end
 
@@ -204,26 +211,10 @@
     self.faceBtn.selected = NO;
     self.moreBtn.selected = NO;
 }
-- (void)willShowKeyboardFromFrame:(CGRect)beginFrame toFrame:(CGRect)toFrame
-{
-    if (beginFrame.origin.y == [[UIScreen mainScreen] bounds].size.height)
-    {
-        [self willShowBottomHeight:toFrame.size.height];
-        if (self.activeView) {
-            [self.activeView removeFromSuperview];
-        }
-        self.activeView = nil;
-    }
-    else if(toFrame.origin.y == [[UIScreen mainScreen] bounds].size.height)
-    {
-        [self willShowBottomHeight:0];
-    }
-    else{
-        [self willShowBottomHeight:toFrame.size.height];
-    }
-}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+    
     if ([text isEqualToString:@"\n"]) {
         if ([self.delegate respondsToSelector:@selector(didSendText:)]) {
             [self.delegate didSendText:textView.text];
@@ -292,8 +283,64 @@
 }
 - (void)didselectImageView:(NSInteger)index
 {
-    //这里是更多的view中选择了哪个图片
-    NSLog(@"%ld",(long)index);
+    switch (index) {
+        case 0:
+            [self createActionSheet];
+            break;
+        default:
+            break;
+    }
+}
+- (void)createActionSheet
+{
+    UIActionSheet *action=[[UIActionSheet alloc] initWithTitle:@"选取照片" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"从摄像头选取", @"从图片库选择",nil];
+    [action showInView:self];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self openCamera];
+            break;
+        case 1:
+            [self openLibary];
+            break;
+        default:
+            break;
+    }
+}
+- (void)openCamera{
+    //打开系统相机
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self.currentCtr presentViewController:picker animated:YES completion:nil];
+    }
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if([self.delegate respondsToSelector:@selector(returnImage:)]){
+        [self.delegate returnImage:image];
+    }
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    [self.currentCtr dismissViewControllerAnimated:YES completion:nil];
+    
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self.currentCtr dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)openLibary{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self.currentCtr presentViewController:picker animated:YES completion:nil];
+    }
 }
 - (void)dealloc
 {
