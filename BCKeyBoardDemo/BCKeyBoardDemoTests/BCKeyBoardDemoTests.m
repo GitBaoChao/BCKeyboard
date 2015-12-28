@@ -2,11 +2,10 @@
 //  BCKeyBoardDemoTests.m
 //  BCKeyBoardDemoTests
 //
-//  Created by baochao on 15/7/29.
-//  Copyright (c) 2015年 baochao. All rights reserved.
+//  Created by baochao on 15/12/28.
+//  Copyright © 2015年 io.hzlzh.yunshouyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 @interface BCKeyBoardDemoTests : XCTestCase
@@ -27,7 +26,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {

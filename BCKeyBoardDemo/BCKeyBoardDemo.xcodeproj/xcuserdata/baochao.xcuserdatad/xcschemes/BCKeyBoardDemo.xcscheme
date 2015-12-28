@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBB794FF1B68C05C0060BAB9"
+               BlueprintIdentifier = "CBE2CE2A1C30DD490078DC13"
                BuildableName = "BCKeyBoardDemo.app"
                BlueprintName = "BCKeyBoardDemo"
-               ReferencedContainer = "container:BCKeyBoardDemo.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBB795181B68C05C0060BAB9"
-               BuildableName = "BCKeyBoardDemoTests.xctest"
-               BlueprintName = "BCKeyBoardDemoTests"
                ReferencedContainer = "container:BCKeyBoardDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBB795181B68C05C0060BAB9"
+               BlueprintIdentifier = "CBE2CE431C30DD490078DC13"
                BuildableName = "BCKeyBoardDemoTests.xctest"
                BlueprintName = "BCKeyBoardDemoTests"
+               ReferencedContainer = "container:BCKeyBoardDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CBE2CE4E1C30DD490078DC13"
+               BuildableName = "BCKeyBoardDemoUITests.xctest"
+               BlueprintName = "BCKeyBoardDemoUITests"
                ReferencedContainer = "container:BCKeyBoardDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CBB794FF1B68C05C0060BAB9"
+            BlueprintIdentifier = "CBE2CE2A1C30DD490078DC13"
             BuildableName = "BCKeyBoardDemo.app"
             BlueprintName = "BCKeyBoardDemo"
             ReferencedContainer = "container:BCKeyBoardDemo.xcodeproj">
@@ -79,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CBB794FF1B68C05C0060BAB9"
+            BlueprintIdentifier = "CBE2CE2A1C30DD490078DC13"
             BuildableName = "BCKeyBoardDemo.app"
             BlueprintName = "BCKeyBoardDemo"
             ReferencedContainer = "container:BCKeyBoardDemo.xcodeproj">
@@ -98,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CBB794FF1B68C05C0060BAB9"
+            BlueprintIdentifier = "CBE2CE2A1C30DD490078DC13"
             BuildableName = "BCKeyBoardDemo.app"
             BlueprintName = "BCKeyBoardDemo"
             ReferencedContainer = "container:BCKeyBoardDemo.xcodeproj">
